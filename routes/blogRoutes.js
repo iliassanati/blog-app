@@ -22,6 +22,8 @@ module.exports = (app) => {
 
     const cachedBlogs = await client.get(req.user.id);
 
+    console.log(cachedBlogs);
+
     const blogs = await Blog.find({ _user: req.user.id });
 
     res.send(blogs);
